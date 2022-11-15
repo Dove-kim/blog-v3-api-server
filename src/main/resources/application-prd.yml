@@ -1,7 +1,14 @@
 server:
+  tomcat:
+    threads:
+      max: 200 # 생성할 수 있는 thread의 총 개수
+      min-spare: 10 # 항상 활성화 되어있는(idle) thread의 개수
+    max-connections: 8192 # 수립가능한 connection의 총 개수
+    accept-count: 2000 # 작업큐의 사이즈
+    connection-timeout: 20000 # timeout 판단 기준 시간, 20초
   port: 8080
 service:
-  environment: local
+  environment: production
 
 spring:
   datasource:
@@ -19,20 +26,21 @@ spring:
     hibernate:
       format_sql: true
       ddl-auto: none
-    generate-ddl: false #
+    generate-ddl: false
     properties:
       hibernate.default_batch_fetch_size: 1000
-      hibernate.query.plan_cache_max_size: 800
+      hibernate.query.plan_cache_max_size: 500
       hibernate.query.plan_parameter_metadata_max_size: 32
-
+  h2:
+    console:
+      enabled: false
   jackson:
     time-zone: Asia/Seoul
 
-logging:
-  level:
-    org:
-      hibernate:
-        type:
-          descriptor:
-            sql: trace
-
+#logging:
+#  level:
+#    org:
+#      hibernate:
+#        type:
+#          descriptor:
+#            sql: trace
