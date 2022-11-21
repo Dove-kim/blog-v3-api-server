@@ -7,8 +7,8 @@ spring:
   datasource:
     url: jdbc:mysql://localhost:13306?useUnicode=yes&useSSL=false&serverTimezone=Asia/Seoul&characterEncoding=utf8&allowPublicKeyRetrieval=true&rewriteBatchedStatements=true
     driver-class-name: com.mysql.cj.jdbc.Driver
-    username: root
-    password: admin
+    username: blog_user
+    password: blog2022!
     hikari:
       minimum-idle: 3
       maximum-pool-size: 5

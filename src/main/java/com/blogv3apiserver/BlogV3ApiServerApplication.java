@@ -6,8 +6,6 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 
 @SpringBootApplication
-@Slf4j
-@EnableJpaRepositories
 public class BlogV3ApiServerApplication {
 
     public static void main(String[] args) {
